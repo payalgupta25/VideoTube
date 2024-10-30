@@ -52,6 +52,9 @@ const userSchema = new Schema(
     }
 )
 
+//encrypting password
+
+//dont use arrow function here , as we dont have this ki ref in that
 userSchema.pre("save", async function (next) {
     if(!this.isModified("password")) return next();
 
@@ -60,8 +63,11 @@ userSchema.pre("save", async function (next) {
 })
 
 userSchema.methods.isPasswordCorrect = async function(password){
-    return await bcrypt.compare(password, this.password)
+    return await bcrypt.compare(password, this.password)        //first is user input, second is encrypted
 }
+
+
+//Both are JWT Tokens
 
 userSchema.methods.generateAccessToken = function(){
     return jwt.sign(
