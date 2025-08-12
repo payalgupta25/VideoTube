@@ -9,8 +9,8 @@ const userSchema = new Schema(
             required: true,
             unique: true,
             lowercase: true,
-            trim: true, 
-            index: true
+            trim: true,  //it will remove the extra spaces
+            index: true //it will help in searching 
         },
         email: {
             type: String,

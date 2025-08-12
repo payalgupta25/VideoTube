@@ -19,20 +19,6 @@ connectDB()
     console.log("MONGO db connection failed !!! ", err);
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //One of the approach to connectDB through index.js
 
 /*
